@@ -45,7 +45,7 @@ public class WorldConfigImpl {
 
     @ApiStatus.Internal
     public static void initialize() {
-        WorldLifecycle.WORLD_FOLDER_READY.subscribe(WorldConfigImpl::loadForWorld);
+        WorldLifecycle.WORLD_FOLDER_READY.subscribe(WorldConfigImpl::loadForWorld, 10100);
         registerMod(ModCoreImpl.GLOBAL_MOD);
         registerMod(LegacyHelper.BCLIB_CORE);
         registerMod(LegacyHelper.WORLDS_TOGETHER_CORE);
